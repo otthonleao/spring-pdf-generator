@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PDF Dinâmico</title>
+</head>
+<body>
+    <p>Esse PDF é dinâmico, onde foi desenvolvido um template a ser utilizado</p>
+    <p>e alguns dados são inseridos via Data Binding entre o java e o thymeleaf</p>
+    <p>Os dados inseridos são:</p><br>
+
+    <h1>Lista de Cursos</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nome do Curso</th>
+                <th>Autor do Curso</th>
+                <th>Carga Horária</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="curso : ${cursos}">
+                <td th:text="${curso.nome}"></td>
+                <td th:text="${curso.autor}"></td>
+                <td th:text="${curso.cargaHoraria}"></td>
+            </tr>
+    </table>
+</body>
+</html>
